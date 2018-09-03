@@ -2732,7 +2732,7 @@ function register_pet() {
     var username = $("pet_register-username").val();
     var pettype = $("pet_register-pettype").val();
     var breed = $("pet_register-breed").val();
-    var city_select = $("pet_register-city_select").val();
+    var age = $("pet_register-age").val();
     var profile_btn = profile_image_link;
     var cover_btn = profile_cover_image_link;
 
@@ -2748,7 +2748,7 @@ function register_pet() {
     } else if (!breed) {
         myApp.alert("Please provide Pet Breed");
         return false;
-    } else if (!city_select) {
+    } else if (!age) {
         myApp.alert("Please provide Pet Age");
         return false;
     } else if (!profile_btn) {
@@ -2767,7 +2767,7 @@ function register_pet() {
                 username: username,
                 pettype: pettype,
                 breed: breed,
-                city_select: city_select,
+                age: age,
                 profile_btn: profile_btn,
                 cover_btn: cover_btn,
                 parent_user_id: token.id,
