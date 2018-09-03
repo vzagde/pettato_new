@@ -12,6 +12,7 @@ var user_data;
 var email_regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 var phone_regex = /^\d{10}$/;
 var image_from_device = '';
+var profile_goto_id, profile_id_data = '';
 
 var lat, lng;
 var time = '';
@@ -288,6 +289,7 @@ myApp.onPageInit('pets_list', function(page) {
 
 myApp.onPageInit('business_list', function(page) {
     myApp.allowPanelOpen = true;
+    load_business_profiles();
 });
 
 myApp.onPageInit('business_register_add', function(page) {
@@ -317,6 +319,7 @@ myApp.onPageInit('pet_register', function(page) {
 
 myApp.onPageInit('profile_pet', function(page) {
     myApp.allowPanelOpen = true;
+    load_profile_content();
 });
 
 

@@ -2725,11 +2725,51 @@ function load_pets_profiles() {
         crossDomain: true,
         data: { user_id: token.id, }
     }).done(function(res){
+        var html = '';
         if (res.status == 'Success') {
-        } else {
+            $.each(res.response, function(index, value){
+                html += '<div class="card facebook-card" onclick="got_pets_page('+value.id+')">'+
+                        '<div class="card-header no-border">'+
+                        '<div class="facebook-avatar">'+
+                        '<img src="'+image_url+value.profile_image+'" width="50" height="50">'+
+                        '</div>'+
+                        '<div class="facebook-name">'+value.first_name+'</div>'+
+                        '<div class="facebook-date">@'+value.username+'</div>'+
+                        '</div>'+
+                        '</div>';
+            })
+            $("#existing_pet_accounts").html(html);
         }
+            $("#existing_pet_accounts").html(html);
     })
 }
+
+function load_business_profiles() {
+    $.ajax({
+        url: base_url+'get_profile_business',
+        type: 'POST',
+        crossDomain: true,
+        data: { user_id: token.id, }
+    }).done(function(res){
+        var html = '';
+        if (res.status == 'Success') {
+            $.each(res.response, function(index, value){
+                html += '<div class="card facebook-card">'+
+                        '<div class="card-header no-border">'+
+                        '<div class="facebook-avatar">'+
+                        '<img src="'+image_url+value.profile_image+'" width="50" height="50">'+
+                        '</div>'+
+                        '<div class="facebook-name">'+value.first_name+'</div>'+
+                        '<div class="facebook-date">@'+value.username+'</div>'+
+                        '</div>'+
+                        '</div>';
+            })
+            $("#existing_business_accounts").html(html);
+        }
+            $("#existing_business_accounts").html(html);
+    })
+}
+
 
 function upload_business() {
     var name = $('#business_register-name').val().trim();
@@ -2932,6 +2972,32 @@ function load_breed_dropdown() {
     })
 }
 
+function got_pets_page(profile_id) {
+    profile_goto_id = profile_id;
+    goto_page('profile_pet.html');
+}
+
+function load_profile_content() {
+    $.ajax({
+        url: base_url + 'get_pet_profile_data',
+        type: 'POST',
+        crossDomain: true,
+        data: {
+            user_id: profile_goto_id,
+        }
+    }).done(function(res){
+        var html = '';
+        if (res.status == 'Success') {
+            $(".profie_image").attr('src', image_url+res.response.profile_image);
+            $(".cover_image").attr('src', image_url+res.response.cover_pic);
+            $(".p_name").attr('src', image_url+res.response.first_name);
+            console.log(res.response);
+        }
+        $("#pet_register-breed").html(html);
+    }).error(function(res){
+        $("#pet_register-breed").html('');
+    })
+}
 
 /*
     Camera Operations Functionality Starts
