@@ -2724,6 +2724,10 @@ function load_pets_profiles() {
         type: 'POST',
         crossDomain: true,
         data: { user_id: token.id, }
+    }).done(function(res){
+        if (res.status == 'Success') {
+        } else {
+        }
     })
 }
 

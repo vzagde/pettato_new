@@ -138,7 +138,7 @@ myApp.onPageInit('chats', function(page) {
     myApp.allowPanelOpen = true;
     clearInterval(new_comment_interval);
     clearInterval(new_chat_interval);
-    load_chats();
+    bottom_tabs();
 });
 
 myApp.onPageInit('chat', function(page) {
@@ -151,6 +151,7 @@ myApp.onPageInit('chat', function(page) {
 
 myApp.onPageInit('notifications', function(page) {
     myApp.allowPanelOpen = true;
+    bottom_tabs();
     clearInterval(new_comment_interval);
     clearInterval(new_chat_interval);
     load_notification();
