@@ -2727,12 +2727,111 @@ function load_pets_profiles() {
     })
 }
 
+function upload_business() {
+    var name = $('#business_register-name').val().trim();
+    var username = $('#business_register-username').val().trim();
+    var business_name = $('#business_register-buissness').val().trim();
+    var category = $('#business_register-category').val();
+    var email = $('#business_register-email').val().trim();
+    var phone = $('#business_register-phone').val().trim();
+    var city_id = $('#business_register-city_select').val().trim();
+    var address = $('#business_register-address').val().trim();
+    var lat_add = $('#business_register-lat').val().trim();
+    var lng_add = $('#business_register-lng').val().trim();
+    var business_category = '';
+    // var profile_image = image_from_device.trim();
+
+    if (name == '') {
+        myApp.alert('Please provide name.');
+        return false;
+    }
+    if (username == '') {
+        myApp.alert('Please provide username.');
+        return false;
+    }
+    if (business_name == '') {
+        myApp.alert('Please provide business name.');
+        return false;
+    }
+    if (!category) {
+        myApp.alert('Please select category.');
+        return false;
+    }
+    if (email == '') {
+        myApp.alert('Please provide email id.');
+        return false;
+    }
+    if (phone == '') {
+        myApp.alert('Please provide email id.');
+        return false;
+    }
+    if (!phone.match(phone_regex)) {
+        myApp.alert('Please enter valid phone number.');
+        return false;
+    }
+    if (!email.match(email_regex)) {
+        myApp.alert('Please provide valid email id.');
+        return false;
+    }
+    if (city_id == '') {
+        myApp.alert('Please provide city.');
+        return false;
+    }
+    if (!address) {
+        myApp.alert('Please provide location.');
+        return false;
+    }
+
+    // business_category = business_category.slice(0, -1);
+
+    myApp.showIndicator();
+    $.ajax({
+        url: base_url + 'upload_business',
+        type: 'POST',
+        dataType: 'json',
+        crossDomain: true,
+        data: {
+            username: username,
+            business_name: business_name,
+            email:email,
+            first_name: name,
+            category: category,
+            city_id: city_id,
+            address: address,
+            lat: lat_add,
+            lng: lng_add,
+            user_type: 'Business',
+            phone: phone,
+            parent_user_id: token.id,
+        },
+    }).done(function(res) {
+        myApp.hideIndicator();
+        if (res.status == 'success') {
+            mainView.router.load({
+                url: 'profile_business.html',
+                ignoreCache: false,
+                query: {
+                    register: true
+                },
+            });
+        } else {
+            myApp.alert(res.api_msg);
+        }
+    }).fail(function(err) {
+        myApp.hideIndicator();
+        myApp.alert('Some error occured while processing your request, Please try again later.');
+        console.log("error: " + j2s(err));
+    }).always(function() {
+        console.log("complete");
+    });
+}
+
 function register_pet() {
-    var name = $("pet_register-name").val();
-    var username = $("pet_register-username").val();
-    var pettype = $("pet_register-pettype").val();
-    var breed = $("pet_register-breed").val();
-    var city_select = $("pet_register-city_select").val();
+    var name = $("#pet_register-name").val();
+    var username = $("#pet_register-username").val();
+    var pettype = $("#pet_register-pettype").val();
+    var breed = $("#pet_register-breed").val();
+    var age = $("#pet_register-age").val();
     var profile_btn = profile_image_link;
     var cover_btn = profile_cover_image_link;
 
@@ -2748,7 +2847,7 @@ function register_pet() {
     } else if (!breed) {
         myApp.alert("Please provide Pet Breed");
         return false;
-    } else if (!city_select) {
+    } else if (!age) {
         myApp.alert("Please provide Pet Age");
         return false;
     } else if (!profile_btn) {
@@ -2767,7 +2866,7 @@ function register_pet() {
                 username: username,
                 pettype: pettype,
                 breed: breed,
-                city_select: city_select,
+                age: age,
                 profile_btn: profile_btn,
                 cover_btn: cover_btn,
                 parent_user_id: token.id,
@@ -2786,6 +2885,47 @@ function register_pet() {
     }
 
 
+}
+
+function load_pet_categories() {
+    $.ajax({
+        url: base_url + 'get_pet_type_list',
+        type: 'POST',
+        crossDomain: true,
+    }).done(function(res){
+        var html = '';
+        if (res.status == 'Success') {
+            html += '<option>Select Pet Type</option>';
+            $.each(res.response, function(index, value){
+                html += '<option value="'+value.id+'">'+value.pet_type+'</option>';
+            })
+        }
+        $("#pet_register-pettype").html(html);
+    }).error(function(res){
+        $("#pet_register-pettype").html('');
+    })
+}
+
+function load_breed_dropdown() {
+    $.ajax({
+        url: base_url + 'get_breeds_list',
+        type: 'POST',
+        crossDomain: true,
+        data: {
+            pet_type: $("#pet_register-pettype").val(),
+        }
+    }).done(function(res){
+        var html = '';
+        if (res.status == 'Success') {
+            html += '<option>Select Pet Type</option>';
+            $.each(res.response, function(index, value) {
+                html += '<option value="'+value.id+'">'+value.breed+'</option>';
+            })
+        }
+        $("#pet_register-breed").html(html);
+    }).error(function(res){
+        $("#pet_register-breed").html('');
+    })
 }
 
 

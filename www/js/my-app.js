@@ -295,6 +295,23 @@ myApp.onPageInit('business_register_add', function(page) {
 
 myApp.onPageInit('pet_register', function(page) {
     myApp.allowPanelOpen = true;
+    load_pet_categories();
+    $("#pet_register-pettype").change(function(e) {
+        e.preventDefault();
+        if ($("#pet_register-pettype").val() == 'Select Pet Type') {
+            myApp.alert("Please select the Pet Type");
+        } else {
+            load_breed_dropdown();
+        }
+    })
+    // $("#pet_register-pettype").change(function(e){
+    //     e.preventDefault();
+    //     if (!$("#pet_register-pettype").val()) {
+    //         myApp.alert("Please select the Pet Type");
+    //     } else {
+    //         load_breed_dropdown();
+    //     }
+    // })
 });
 
 myApp.onPageInit('profile_pet', function(page) {
