@@ -1,28 +1,30 @@
-<div data-page="profile_pet" class="page">
+<div data-page="profile_business_sub" class="page">
 
-    <div class="navbar header">
+	<div class="navbar header">
         <div class="navbar-inner">
             <div class="left"><a href="#" class="back link icon-only"><i class="material-icons" style="color:#000;">arrow_back</i></a></div>
-            <div style="margin: 0 4% !important;" class="center title1" id="single-header">Pet Profile</div>
-            <img src="img/header-right.png" class="right" alt="" />
+            <div style="margin: 0 4% !important;" class="center title1" id="single-header">Business Profile</div>
+			<img src="img/header-right.png" class="right" alt="" />
+            <!-- <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div> -->
         </div>
     </div>
 
     <div class="page-content pad_55">
         <div class="content-block f_box">
 			<div class="c_b">
+				<!-- <button onclick="profile_cover_image();" class="button button-big cover_image_btn insert_cover"><i class="material-icons cvr">insert_photo</i></button> -->
 				<div class="cover_box">
-					<img width="100%" src="img/pet_cover.png" alt="" class="cover_image">
+					<img width="100%" src="img/cover_pic.jpg" alt="" class="cover_image">
 				</div>
 				<div class="row">
 					<div class="col-65">
 						<div class="col-100">
 							<div class="pro_pic1">
-								<img width="30%" src="img/dummy-profile.png" alt="" class="profie_image">
+								<img width="30%" src="img/header-right.png" alt="" class="profie_image">
 							</div>
 						</div>
 						<div class="col-100">
-							<p class="p_name textupper"></p>
+							<p class="p_name textupper">Pettato</p>
 						</div>
 					</div>
 					<div class="col-35">
@@ -45,17 +47,31 @@
 			    </div>
 			</div>
 			<div class="user_blk">
-				<div class="pro_file_icons">
+				<div class="pro_file_icons follow_block call">
+					<i class="material-icons">call</i>
+					<p>Call</p>
+				</div>
+				<div class="pro_file_icons chat follow_block">
+					<i class="material-icons">email</i>
+					<p>rhuzaif@yahoo.com</p>
+				</div>
+				<div class="pro_file_icons follow_block">
+					<center><i class="material-icons">location_on</i></center>
+					<p class="">Location</p>
+				</div>
+			</div>
+			<div class="user_blk">
+				<div class="pro_file_icons call">
 					<i class="material-icons">supervisor_account</i>
 					<p>Add<br>Account</p>
 				</div>
-				<div class="pro_file_icons goto_pets_list" onclick="goto_page('pets_list.html');">
+				<div class="pro_file_icons chat" onclick="goto_page('pets_list.html');">
 					<i class="material-icons">pets</i>
 					<p>Pet<br>Account</p>
 				</div>
-				<div class="pro_file_icons goto_business_list" onclick="goto_page('business_list.html');">
+				<div class="pro_file_icons follow" onclick="goto_page('business_list.html');">
 					<center><i class="material-icons">business_center</i></center>
-					<p class="">Business<br>Account</p>
+					<p class="">User<br>Account</p>
 				</div>
 			</div>
 			<div class="user_own_feed f_box">

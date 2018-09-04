@@ -14,7 +14,7 @@ var phone_regex = /^\d{10}$/;
 var image_from_device = '';
 var profile_goto_id, profile_id_data = '';
 
-var lat, lng;
+var lat, lng, marker;
 var time = '';
 var profile_image_link = '';
 var profile_cover_image_link = '';
@@ -222,8 +222,8 @@ myApp.onPageInit('business_register', function(page) {
     clearInterval(new_comment_interval);
     clearInterval(new_chat_interval);
     load_city('#business_register-city_select');
-
     initialize();
+    load_category('#business_register-category', function(){});
 
     // $('#business_register-city_select').change(function(event) {
     //     var city_id = $(this).val();
@@ -231,7 +231,6 @@ myApp.onPageInit('business_register', function(page) {
     //     load_location('#business_register-location_select', city_id, function(){});
     // });
 
-    load_category('#business_register-category', function(){});
 });
 
 myApp.onPageInit('edit_profile_business', function(page) {
@@ -284,16 +283,21 @@ myApp.onPageInit('people', function(page) {
 
 myApp.onPageInit('pets_list', function(page) {
     myApp.allowPanelOpen = true;
+    bottom_tabs();
     load_pets_profiles();
 });
 
 myApp.onPageInit('business_list', function(page) {
     myApp.allowPanelOpen = true;
+    bottom_tabs();
     load_business_profiles();
 });
 
 myApp.onPageInit('business_register_add', function(page) {
     myApp.allowPanelOpen = true;
+    load_city('#business_register_add-city_select');
+    initialize();
+    load_category('#business_register_add-category', function(){});
 });
 
 myApp.onPageInit('pet_register', function(page) {
@@ -319,9 +323,20 @@ myApp.onPageInit('pet_register', function(page) {
 
 myApp.onPageInit('profile_pet', function(page) {
     myApp.allowPanelOpen = true;
+    bottom_tabs();
     load_profile_content();
 });
 
+myApp.onPageInit('profile_business_sub', function(page) {
+    myApp.allowPanelOpen = true;
+    bottom_tabs();
+    clearInterval(new_comment_interval);
+    clearInterval(new_chat_interval);
+    image_from_device = '';
+    var user_id = profile_goto_id;
+    $('.unfollow').hide();
+    load_business_profile(user_id);
+});
 
 
 

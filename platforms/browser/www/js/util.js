@@ -1062,12 +1062,38 @@ function load_feeds() {
         $('#offerCreate').show();
     }
 
-    $(".add_clk").click(function() {
-        // $(".shr_lnk").hide();
-        $(this).prev(".shr_lnk").slideToggle();
-        $(this).prev(".shr_lnk").prev(".shr_lnk").slideToggle();
-        $(this).prev(".shr_lnk").prev(".shr_lnk").prev(".shr_lnk").slideToggle();
-        $(this).prev(".dlt_lnk").slideToggle();
+    var tabs_active = 0;
+
+    $(".add_clk").click(function(e) {
+        e.preventDefault();
+        if (tabs_active == 0) {
+            tabs_active = 1;
+            $(".shr_lnk").css('opacity', 0);
+            $(".shr_lnk").css('top', 0);
+
+            $(this).prev(".shr_lnk").animate({
+                top: '-=65%',
+                opacity: 1,
+            });
+
+            $(this).prev(".shr_lnk").prev(".shr_lnk").animate({
+                top: '-=145%',
+                opacity: 1,
+            });
+
+            $(this).prev(".shr_lnk").prev(".shr_lnk").prev(".shr_lnk").animate({
+                top: '-=230%',
+                opacity: 1,
+            });
+        } else {
+            tabs_active = 0;
+            $(".shr_lnk").animate({opacity: 0, top: '0px'});
+        }
+        // // $(".shr_lnk").hide();
+        // $(this).prev(".shr_lnk").slideToggle();
+        // $(this).prev(".shr_lnk").prev(".shr_lnk").slideToggle();
+        // $(this).prev(".shr_lnk").prev(".shr_lnk").prev(".shr_lnk").slideToggle();
+        // $(this).prev(".dlt_lnk").slideToggle();
     });
     // myApp.showIndicator();
    //  $.ajax({
@@ -2668,14 +2694,14 @@ function initialize() {
             google.maps.event.addListener(marker, 'dragend', function (e) {
                 lat = e.latLng.lat();
                 lng = e.latLng.lng();
-                $("#business_register-lat").val(lat);
-                $("#business_register-lng").val(lng);
+                $("#business_register-lat, #business_register_add-lat").val(lat);
+                $("#business_register-lng, #business_register_add-lng").val(lng);
 
                 geocoder.geocode({'location': {lat: lat, lng: lng}}, function (results, status) {
                   console.log(results);
                     if (status == google.maps.GeocoderStatus.OK) {
                         if (results[0]) {
-                            $("#business_register-address").val(results[0].formatted_address);
+                            $("#business_register-address, #business_register_add-address").val(results[0].formatted_address);
                         } else {
                             console.log('No results found');
                         }
@@ -2690,14 +2716,14 @@ function initialize() {
     google.maps.event.addListener(map, 'click', function (e) {
         lat = e.latLng.lat();
         lng = e.latLng.lng();
-        $("#business_register-lat").val(lat);
-        $("#business_register-lng").val(lng);
+        $("#business_register-lat, #business_register_add-lat").val(lat);
+        $("#business_register-lng, #business_register_add-lng").val(lng);
 
         geocoder.geocode({'location': {lat: lat, lng: lng}}, function (results, status) {
           console.log(results);
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
-                    $("#business_register-address").val(results[0].formatted_address);
+                    $("#business_register-address, #business_register_add-address").val(results[0].formatted_address);
                 } else {
                     console.log('No results found');
                 }
@@ -2754,7 +2780,7 @@ function load_business_profiles() {
         var html = '';
         if (res.status == 'Success') {
             $.each(res.response, function(index, value){
-                html += '<div class="card facebook-card">'+
+                html += '<div class="card facebook-card" onclick="got_business_page('+value.id+')">'+
                         '<div class="card-header no-border">'+
                         '<div class="facebook-avatar">'+
                         '<img src="'+image_url+value.profile_image+'" width="50" height="50">'+
@@ -2772,16 +2798,17 @@ function load_business_profiles() {
 
 
 function upload_business() {
-    var name = $('#business_register-name').val().trim();
-    var username = $('#business_register-username').val().trim();
-    var business_name = $('#business_register-buissness').val().trim();
-    var category = $('#business_register-category').val();
-    var email = $('#business_register-email').val().trim();
-    var phone = $('#business_register-phone').val().trim();
-    var city_id = $('#business_register-city_select').val().trim();
-    var address = $('#business_register-address').val().trim();
-    var lat_add = $('#business_register-lat').val().trim();
-    var lng_add = $('#business_register-lng').val().trim();
+    var name = $("#business_register_add-name").val();
+    var username = $("#business_register_add-username").val();
+    var buissness_name = $("#business_register_add-buissness").val();
+    var category = $("#business_register_add-category").val();
+    var email = $("#business_register_add-email").val();
+    var phone = $("#business_register_add-phone").val();
+    var city_id = $("#business_register_add-city_select").val();
+    var address = $("#business_register_add-address").val();
+    var lat_add = $("#business_register_add-lat").val();
+    var lng_add = $("#business_register_add-lng").val();
+
     var business_category = '';
     // var profile_image = image_from_device.trim();
 
@@ -2793,7 +2820,7 @@ function upload_business() {
         myApp.alert('Please provide username.');
         return false;
     }
-    if (business_name == '') {
+    if (buissness_name == '') {
         myApp.alert('Please provide business name.');
         return false;
     }
@@ -2836,7 +2863,7 @@ function upload_business() {
         crossDomain: true,
         data: {
             username: username,
-            business_name: business_name,
+            business_name: buissness_name,
             email:email,
             first_name: name,
             category: category,
@@ -2851,8 +2878,9 @@ function upload_business() {
     }).done(function(res) {
         myApp.hideIndicator();
         if (res.status == 'success') {
+            profile_goto_id = res.response;
             mainView.router.load({
-                url: 'profile_business.html',
+                url: 'profile_business_sub.html',
                 ignoreCache: false,
                 query: {
                     register: true
@@ -2975,6 +3003,11 @@ function load_breed_dropdown() {
 function got_pets_page(profile_id) {
     profile_goto_id = profile_id;
     goto_page('profile_pet.html');
+}
+
+function got_business_page(profile_id) {
+    profile_goto_id = profile_id;
+    goto_page('profile_business_sub.html');
 }
 
 function load_profile_content() {
