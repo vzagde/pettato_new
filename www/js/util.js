@@ -2808,6 +2808,7 @@ function upload_business() {
     var address = $("#business_register_add-address").val();
     var lat_add = $("#business_register_add-lat").val();
     var lng_add = $("#business_register_add-lng").val();
+    var description = $("#business_register_add-description").val();
     var profile_image = profile_image_link;
     var cover_image = profile_cover_image_link;
 
@@ -2865,6 +2866,12 @@ function upload_business() {
         return false;
     }
 
+    if (!description) {
+        myApp.alert('Please provide Description.');
+        return false;
+    }
+
+
     // business_category = business_category.slice(0, -1);
 
     myApp.showIndicator();
@@ -2888,6 +2895,7 @@ function upload_business() {
             parent_user_id: token.id,
             profile_image: profile_image,
             cover_image: cover_image,
+            description: description,
 
         },
     }).done(function(res) {
@@ -2913,6 +2921,7 @@ function register_pet() {
     var pettype = $("#pet_register-pettype").val();
     var breed = $("#pet_register-breed").val();
     var age = $("#pet_register-age").val();
+    var description = $("#pet_register-description").val();
     var profile_btn = profile_image_link;
     var cover_btn = profile_cover_image_link;
 
@@ -2937,6 +2946,9 @@ function register_pet() {
     } else if (!cover_btn) {
         myApp.alert("Please provide Pet Cover Image");
         return false;
+    } else if (!description) {
+        myApp.alert("Please provide Pet Description");
+        return false;
     } else {
         $.ajax({
             url: base_url + 'upload_pet_profile',
@@ -2951,6 +2963,7 @@ function register_pet() {
                 profile_btn: profile_btn,
                 cover_btn: cover_btn,
                 parent_user_id: token.id,
+                description: description,
             }
         }).done(function(res){
             if (res.status == 'Success') {
