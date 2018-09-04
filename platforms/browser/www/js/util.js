@@ -2808,6 +2808,8 @@ function upload_business() {
     var address = $("#business_register_add-address").val();
     var lat_add = $("#business_register_add-lat").val();
     var lng_add = $("#business_register_add-lng").val();
+    var profile_image = profile_image_link;
+    var cover_image = profile_cover_image_link;
 
     var business_category = '';
     // var profile_image = image_from_device.trim();
@@ -2853,6 +2855,16 @@ function upload_business() {
         return false;
     }
 
+    if (!profile_image) {
+        myApp.alert('Please provide Profile Picture.');
+        return false;
+    }
+
+    if (!cover_image) {
+        myApp.alert('Please provide Cover Picture.');
+        return false;
+    }
+
     // business_category = business_category.slice(0, -1);
 
     myApp.showIndicator();
@@ -2874,18 +2886,15 @@ function upload_business() {
             user_type: 'Business',
             phone: phone,
             parent_user_id: token.id,
+            profile_image: profile_image,
+            cover_image: cover_image,
+
         },
     }).done(function(res) {
         myApp.hideIndicator();
-        if (res.status == 'success') {
+        if (res.status == 'Success') {
             profile_goto_id = res.response;
-            mainView.router.load({
-                url: 'profile_business_sub.html',
-                ignoreCache: false,
-                query: {
-                    register: true
-                },
-            });
+            goto_page('profile_business_sub.html');
         } else {
             myApp.alert(res.api_msg);
         }
@@ -3061,28 +3070,52 @@ function open_dialog_for_image(type) {
 
 // On Selection of camera
 function image_camera() {
-    navigator.camera.getPicture(shopper_register_onSuccess, shopper_register_onFail, {
-        quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI,
-        sourceType: Camera.PictureSourceType.CAMERA,
-        targetWidth: 720,
-        targetHeight: 640,
-        correctOrientation: true,
-        allowEdit: true,
-    });
+    if (image_upload_type == 'pet_profile' || image_upload_type == 'user_profile' || image_upload_type == 'business_profile') {
+        navigator.camera.getPicture(shopper_register_onSuccess, shopper_register_onFail, {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI,
+            sourceType: Camera.PictureSourceType.CAMERA,
+            targetWidth: 720,
+            targetHeight: 640,
+            correctOrientation: true,
+            allowEdit: true,
+        });
+    } else {
+        navigator.camera.getPicture(shopper_register_onSuccess, shopper_register_onFail, {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI,
+            sourceType: Camera.PictureSourceType.CAMERA,
+            targetWidth: 720,
+            targetHeight: 500,
+            correctOrientation: true,
+            allowEdit: true,
+        });
+    }
 }
 
 // On Selection of gallery
 function image_gallery() {
-    navigator.camera.getPicture(shopper_register_onSuccess, shopper_register_onFail, {
-        quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI,
-        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
-        targetWidth: 720,
-        targetHeight: 640,
-        correctOrientation: true,
-        allowEdit: true,
-    });
+    if (image_upload_type == 'pet_profile' || image_upload_type == 'user_profile' || image_upload_type == 'business_profile') {
+        navigator.camera.getPicture(shopper_register_onSuccess, shopper_register_onFail, {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI,
+            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+            targetWidth: 720,
+            targetHeight: 640,
+            correctOrientation: true,
+            allowEdit: true,
+        });
+    } else {
+        navigator.camera.getPicture(shopper_register_onSuccess, shopper_register_onFail, {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI,
+            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+            targetWidth: 720,
+            targetHeight: 500,
+            correctOrientation: true,
+            allowEdit: true,
+        });
+    }
 }
 
 // Image selection success function
