@@ -1,10 +1,9 @@
-<div data-page="notifications" class="page">
-    
+<div data-page="notifications" class="page pets_list">
     <div class="navbar header">
         <div class="navbar-inner">
             <div class="left">
                 <a href="#" class="open-panel link icon-only">
-                    <i class="material-icons" style="color:#000;">menu</i>
+                    <i class="material-icons" style="color:#539642;">menu</i>
                 </a>
             </div>
             <div style="margin:0 6% !important;" class="center title1">Notifications</div>
@@ -12,57 +11,30 @@
             <!-- <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div> -->
         </div>
     </div>
-
-
     <div class="page-content pad_55">
-        <div class="content-block f_box" style=" margin-bottom:0 !important;" id="notifications-container">
-            <div style="margin-top:0 !important; margin-bottom:0 !important;" class="list-block media-list">
-                <ul id="notifications-ul">
-                    <li class="notify">
-                        <div class="item-content">
-                            <a class="item-media notify_box"><img src="img/ui-sam.jpg" width="44"></a>
-                            <div class="item-inner">
-                                <div class="item-title-row">
-                                    <div class="item-title">Vishal Z</div>
-                                </div>
-                                <div class="item-subtitle notify_sub">Notification Text</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="notify">
-                        <div class="item-content">
-                            <a class="item-media notify_box"><img src="img/ui-sam.jpg" width="44"></a>
-                            <div class="item-inner">
-                                <div class="item-title-row">
-                                    <div class="item-title">Vishal Z</div>
-                                </div>
-                                <div class="item-subtitle notify_sub">Notification Text</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="notify">
-                        <div class="item-content">
-                            <a class="item-media notify_box"><img src="img/ui-sam.jpg" width="44"></a>
-                            <div class="item-inner">
-                                <div class="item-title-row">
-                                    <div class="item-title">Vishal Z</div>
-                                </div>
-                                <div class="item-subtitle notify_sub">Notification Text</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="notify">
-                        <div class="item-content">
-                            <a class="item-media notify_box"><img src="img/ui-sam.jpg" width="44"></a>
-                            <div class="item-inner">
-                                <div class="item-title-row">
-                                    <div class="item-title">Vishal Z</div>
-                                </div>
-                                <div class="item-subtitle notify_sub">Notification Text</div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+        <div class="content-block f_box" id="notifications-container">
+            <div class="list-block media-list">
+                <div class="card facebook-card" onclick="got_pets_page(23)">
+                    <div class="card-header no-border">
+                        <div class="facebook-avatar"><img src="http://notchitup.in/pettato_ci/assets/uploads/upload_image/cat_profile.jpg" width="50" height="50"></div>
+                        <div class="facebook-name">Renu</div>
+                        <div class="facebook-date">Commented on your Feed</div>
+                    </div>
+                </div>
+                <div class="card facebook-card" onclick="got_pets_page(23)">
+                    <div class="card-header no-border">
+                        <div class="facebook-avatar"><img src="http://notchitup.in/pettato_ci/assets/uploads/upload_image/cat_profile.jpg" width="50" height="50"></div>
+                        <div class="facebook-name">Afro</div>
+                        <div class="facebook-date">Liked your Photo</div>
+                    </div>
+                </div>
+                <div class="card facebook-card" onclick="got_pets_page(23)">
+                    <div class="card-header no-border">
+                        <div class="facebook-avatar"><img src="http://notchitup.in/pettato_ci/assets/uploads/upload_image/cat_profile.jpg" width="50" height="50"></div>
+                        <div class="facebook-name">Siddharth</div>
+                        <div class="facebook-date">Would like to do Business with you</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="toolbar tabbar">

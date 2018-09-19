@@ -36,6 +36,10 @@
     top: initial !important;
 }
 
+.color_dark {
+    color: #333333;
+}
+
 .textupper {
     text-transform: uppercase;
 }
@@ -428,7 +432,7 @@
 }
 
 .color_blk{
-    color:rgba(0,0,0,0.71);
+    color: #909090;
 }
 
 .back_none{
@@ -796,6 +800,7 @@
     display: block;
     padding: 10px;
     min-height: 70px;
+    border-bottom: 1px solid rgba(138, 198, 64, 0.5) !important;
 }
 
 .facebook-card .facebook-avatar {
@@ -804,7 +809,7 @@
 
 .facebook-card .facebook-name {
     margin-left: 60px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -854,4 +859,75 @@
     padding: 0 0 15px 0 !important;
 }
 
+.facebook-avatar img, .facebook-card {
+    border-radius: 10px !important;
+}
+
+.notifications .page-content, .pets_list .page-content {
+    background: rgba(255,255,255,1);
+    /*background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 11%, rgba(103,189,69,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(11%, rgba(255,255,255,1)), color-stop(100%, rgba(103,189,69,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 11%, rgba(103,189,69,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 11%, rgba(103,189,69,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 11%, rgba(103,189,69,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 11%, rgba(103,189,69,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#67bd45', GradientType=0 );*/
+}
+
+.notifications .back, .pets_list .back {
+    color: #539642;
+}
+
+.notifications .header, .pets_list .header {
+    border-bottom: transparent 1px solid !important;
+}
+
+.notifications .card, .pets_list .card {
+    background: transparent;
+    box-shadow: none;
+}
+
+.ks-facebook-avatar img {
+    border-radius: 15px !important;
+}
+
+.pro_pic {
+    border-radius: 15px !important;
+}
+
+.inner_pro_pic {
+    border-radius: 20px !important;
+}
+
+.chat_box_design .message-received .message-text {
+    margin-left: 60px;
+}
+
+.chat_box_design .message-sent .message-text {
+    margin-right: 60px;
+    padding: 3% !important;
+}
+
+.chat_box_design .message-sent .message-name {
+    text-align: right;
+}
+
+.chat_box_design .messages-date {
+    color: #333333 !important;
+}
+
+.chat_box_design .message-received .message-text:before {
+    border-bottom: 8px solid #d1ead3 !important;
+}
+
+.chat_box_design .message-received .message-text {
+    background: #d1ead3 !important;
+    padding: 2% 5% !important;
+}
+
+.chat_box_design .message-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+}
 
