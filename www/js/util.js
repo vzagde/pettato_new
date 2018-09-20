@@ -1961,8 +1961,6 @@ function load_business_profile(user_id) {
             $('.cover_image_btn').show();
 
             // If It's Own Account
-            $('.follow_block').hide();
-
             $('.followers').text(res.followers);
             $('.followings').text(res.followings);
 
@@ -2779,7 +2777,7 @@ function load_business_profiles() {
     }).done(function(res){
         var html = '';
         if (res.status == 'Success') {
-            $.each(res.response, function(index, value){
+            $.each(res.response, function(index, value) {
                 html += '<div class="card facebook-card" onclick="got_business_page('+value.id+')">'+
                         '<div class="card-header no-border">'+
                         '<div class="facebook-avatar">'+

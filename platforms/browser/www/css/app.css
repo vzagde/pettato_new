@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Light' !important;
     src: url('../fonts/lato-medium-webfont.eot');
     src: url('../fonts/lato-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-medium-webfont.woff2') format('woff2'), url('../fonts/lato-medium-webfont.woff') format('woff'), url('../fonts/lato-medium-webfont.ttf') format('truetype'), url('../fonts/lato-medium-webfont.svg#latomedium') format('svg');
     font-weight: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Light' !important;
     src: url('../fonts/Lato-Light.eot');
     src: local('?'), url('../fonts/Lato-Light.woff') format('woff'), url('../fonts/Lato-Light.ttf') format('truetype'), url(../) format('svg');
     font-weight: normal;
@@ -65,13 +65,16 @@
     font-size: 28px !important;
 }
 
+.list-block ul:before {
+    background-color: transparent !important;
+}
+
 #shopper_register-profile_btn, #create_feed-image_btn, .btn-center {
     position: relative !important;
     margin: auto;
     right: 0 !important;
     bottom: 0 !important;
 }
-
 
 .landing_bg{
     background:url(../img/index-bg1.png) no-repeat;
@@ -118,7 +121,7 @@
     left: 0;
     right: 0;
     bottom: 25% !important;
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Light' !important;
     text-shadow: 1px 1px #000 !important;
 }
 
@@ -136,7 +139,7 @@
 
 .title {
     color: #000 !important;
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Medium' !important;
     font-size: 1em !important;
     text-align: center !important;
     position: absolute !important;
@@ -151,7 +154,7 @@
 
 .title1 {
     color: #000 !important;
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Medium' !important;
     font-size: 1em !important;
     text-align: center !important;
     margin:0 23% !important;
@@ -160,7 +163,7 @@
 
 .header {
     background: #fff !important;
-    border-bottom: 1px solid #000 !important;
+    border-bottom: 1px solid transparent !important;
     padding: 2% !important;
     /* position: fixed !important;
     top: 0 !important;
@@ -188,7 +191,7 @@
     text-align: center;
     color: #fff !important;
     text-transform: uppercase !important;
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Medium' !important;
 }
 
 .reset-btn {
@@ -391,29 +394,31 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
 }
 
-.shr_lnk{
+.shr_lnk {
     position: absolute !important;
     left: 12%;
     top: -65%;
 }
 
-.black_clr{
-    background:#000 !important;
+.black_clr {
+    background: #68bd45 !important;
 }
 
-.dlt_lnk{
+.dlt_lnk {
     position: absolute !important;
     left: 16%;
     top: -150%;
 }
 
-.create_feed_pic{
-    height: 170px;
-    padding: 15% 10% 10% 10%;
-    background:#fff;
+.create_feed_pic {
+    height: 300px;
+    background: transparent;
+    width: 300px;
+    margin: 0 auto;
+    padding: 25% 0 !important;
 }
 
-.first_tab{
+.first_tab {
     color: #fff !important;
     font-size: 1em !important;
     margin-top: 3%;
@@ -421,7 +426,7 @@
 }
 
 .first_t{
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Light' !important;
     color: #fff !important;
     padding: 2% !important;
 }
@@ -501,7 +506,7 @@
 
 .submit-btn a{
     color: #fff;
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Light' !important;
 }
 
 .messages-content{
@@ -540,7 +545,7 @@
 
 .comment{
     font-size: 1.5em;
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Light' !important;
     color: #fff;
     text-align: center !important;
     position: absolute;
@@ -558,7 +563,7 @@
     text-align: left;
     font-weight: 300;
     font-size: 1.1em;
-    font-family: 'Trench-Thin' !important;
+    font-family: 'CooperHewitt-Light' !important;
     text-transform: uppercase;
     line-height: 200%;
 }
@@ -602,6 +607,7 @@
     padding: 0 10%;
     color: rgba(0,0,0,0.51);
     font-weight: bold;
+    font-family: 'CooperHewitt-Bold';
 }
 
 .p_name1{
@@ -901,6 +907,7 @@
 
 .chat_box_design .message-received .message-text {
     margin-left: 60px;
+    padding: 3% !important;
 }
 
 .chat_box_design .message-sent .message-text {
@@ -930,4 +937,26 @@
     height: 50px !important;
     border-radius: 10px !important;
 }
+
+.navbar, .subnavbar, .toolbar {
+    background: #539642;
+}
+
+.searchbar {
+    background: #539642;
+}
+
+label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio, label.label-radio input[type=checkbox]:checked~.item-after i.icon-form-radio, label.label-radio input[type=checkbox]:checked~.item-inner i.icon-form-radio, label.label-radio input[type=radio]:checked+.item-media i.icon-form-radio, label.label-radio input[type=radio]:checked~.item-after i.icon-form-radio, label.label-radio input[type=radio]:checked~.item-inner i.icon-form-radio {
+    border-color: #539642;
+}
+
+label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:after, label.label-radio input[type=checkbox]:checked~.item-after i.icon-form-radio:after, label.label-radio input[type=checkbox]:checked~.item-inner i.icon-form-radio:after, label.label-radio input[type=radio]:checked+.item-media i.icon-form-radio:after, label.label-radio input[type=radio]:checked~.item-after i.icon-form-radio:after, label.label-radio input[type=radio]:checked~.item-inner i.icon-form-radio:after {
+    background: #539642;
+}
+
+.feeds_form_box .materialize-tags, .feeds_form_box textarea {
+    border: #539642 1px solid !important;
+}
+
+
 

@@ -259,6 +259,7 @@ myApp.onPageInit('profile_business', function(page) {
     image_from_device = '';
     var user_id = token.id;
     $('.unfollow').hide();
+    $(".follow_block").hide();
     load_business_profile(user_id);
 });
 
@@ -324,12 +325,13 @@ myApp.onPageInit('pet_register', function(page) {
 myApp.onPageInit('profile_pet', function(page) {
     myApp.allowPanelOpen = true;
     bottom_tabs();
+    $('.unfollow').hide();
     load_profile_content();
 });
 
 myApp.onPageInit('profile_business_sub', function(page) {
     myApp.allowPanelOpen = true;
-    bottom_tabs();
+    // bottom_tabs();
     clearInterval(new_comment_interval);
     clearInterval(new_chat_interval);
     image_from_device = '';
