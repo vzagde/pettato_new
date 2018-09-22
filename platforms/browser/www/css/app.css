@@ -26,6 +26,10 @@
     padding:0 !important;;
 }
 
+.padt0{
+    padding-top: 0 !important;;
+}
+
 .mrg0{
     margin:0 !important;
 }
@@ -38,6 +42,10 @@
 
 .color_dark {
     color: #333333;
+}
+
+.color_8ac640 {
+    color: #8ac640 !important;
 }
 
 .textupper {
@@ -252,7 +260,7 @@
     position: absolute;
     z-index: 1;
     left: 15px;
-    bottom: 30px;
+    bottom: 12px;
 }
 
 .inner_pro_view {
@@ -289,12 +297,12 @@
 }
 
 .inner_pro_pic {
-    width: 70px;
-    height: 70px;
-    border-radius: 70px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
     background: #000;
     overflow: hidden;
-    margin: 5%;
+    margin: 1%;
 }
 
 .pro_pic{
@@ -319,7 +327,6 @@
     margin-top: -38px;
     margin-left: 10%;
     z-index: 99999;
-    background: #000;
     border: 3px solid #fff;
 }
 
@@ -901,9 +908,6 @@
     border-radius: 15px !important;
 }
 
-.inner_pro_pic {
-    border-radius: 20px !important;
-}
 
 .chat_box_design .message-received .message-text {
     margin-left: 60px;
@@ -942,6 +946,10 @@
     background: #539642;
 }
 
+.navbar, .header {
+    background: transparent !important;
+}
+
 .searchbar {
     background: #539642;
 }
@@ -958,5 +966,53 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
     border: #539642 1px solid !important;
 }
 
+.list-block ul:after {
+    background: transparent !important;
+}
 
+#feed-container .facebook-card .card-header {
+    display: block !important;
+    padding: 10px !important;
+}
+
+#feed-container .facebook-card .facebook-avatar {
+    float: left !important;
+}
+
+#feed-container .facebook-card .facebook-name {
+    margin-left: 44px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+#feed-container .facebook-card .facebook-date {
+    margin-left: 44px !important;
+    font-size: 13px !important;
+    color: #8e8e93 !important;
+}
+
+#feed-container .facebook-card .card-footer {
+    background: #fafafa !important;
+}
+
+#feed-container .facebook-card .card-footer a {
+    color: #81848b !important;
+    font-weight: 500 !important;
+}
+
+#feed-container .facebook-card .card-content img {
+    display: block !important;
+}
+
+#feed-container .facebook-card .card-content-inner {
+    padding: 15px 10px !important;
+}
+
+#feed-container .card-footer:before {
+    background-color: transparent !important;
+}
+
+#feed-container .card {
+    box-shadow: 0 0 0 0 rgba(0,0,0,0) !important;
+}
 
