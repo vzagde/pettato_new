@@ -88,6 +88,30 @@ myApp.onPageInit('feeds', function(page) {
     load_feeds();
 });
 
+myApp.onPageInit('become_parent_list', function(page) {
+    myApp.allowPanelOpen = true;
+    console.log('page.query.register:' + page.query.register);
+    if (page.query.register) {
+        // $('.tutorial').click(function(event) {
+        //     $(this).hide();
+        // });
+    }
+    bottom_tabs();
+    load_feeds();
+});
+
+myApp.onPageInit('find_parent_list', function(page) {
+    myApp.allowPanelOpen = true;
+    console.log('page.query.register:' + page.query.register);
+    if (page.query.register) {
+        // $('.tutorial').click(function(event) {
+        //     $(this).hide();
+        // });
+    }
+    bottom_tabs();
+    load_feeds();
+});
+
 myApp.onPageInit('settings', function(page) {
     myApp.allowPanelOpen = true;
     bottom_tabs();
@@ -312,14 +336,32 @@ myApp.onPageInit('pet_register', function(page) {
             load_breed_dropdown();
         }
     })
-    // $("#pet_register-pettype").change(function(e){
-    //     e.preventDefault();
-    //     if (!$("#pet_register-pettype").val()) {
-    //         myApp.alert("Please select the Pet Type");
-    //     } else {
-    //         load_breed_dropdown();
-    //     }
-    // })
+});
+
+myApp.onPageInit('become_parent_create', function(page) {
+    myApp.allowPanelOpen = true;
+    load_pet_categories();
+    $("#pet_register-pettype").change(function(e) {
+        e.preventDefault();
+        if ($("#pet_register-pettype").val() == 'Select Pet Type') {
+            myApp.alert("Please select the Pet Type");
+        } else {
+            load_breed_dropdown();
+        }
+    })
+});
+
+myApp.onPageInit('find_parent_create', function(page) {
+    myApp.allowPanelOpen = true;
+    load_pet_categories();
+    $("#pet_register-pettype").change(function(e) {
+        e.preventDefault();
+        if ($("#pet_register-pettype").val() == 'Select Pet Type') {
+            myApp.alert("Please select the Pet Type");
+        } else {
+            load_breed_dropdown();
+        }
+    })
 });
 
 myApp.onPageInit('profile_pet', function(page) {
