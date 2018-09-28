@@ -92,13 +92,17 @@ myApp.onPageInit('become_parent_list', function(page) {
     myApp.allowPanelOpen = true;
     console.log('page.query.register:' + page.query.register);
     if (page.query.register) {
-        // $('.tutorial').click(function(event) {
-        //     $(this).hide();
-        // });
     }
     bottom_tabs();
     load_feeds();
 });
+
+myApp.onPageInit('become_parent_disp', function(page) {
+    myApp.allowPanelOpen = true;
+    bottom_tabs();
+    load_feeds();
+});
+
 
 myApp.onPageInit('find_parent_list', function(page) {
     myApp.allowPanelOpen = true;
@@ -183,6 +187,14 @@ myApp.onPageInit('notifications', function(page) {
 });
 
 myApp.onPageInit('create_feed', function(page) {
+    myApp.allowPanelOpen = true;
+    image_from_device = '';
+    bottom_tabs();
+    $('#create_feed-tags').materialtags('refresh');
+    load_location_all('#create_feed-location');
+});
+
+myApp.onPageInit('create_lost_and_found', function(page) {
     myApp.allowPanelOpen = true;
     image_from_device = '';
     bottom_tabs();

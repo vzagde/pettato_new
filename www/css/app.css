@@ -822,7 +822,10 @@
     display: block;
     padding: 10px;
     min-height: 70px;
-    border-bottom: 1px solid rgba(138, 198, 64, 0.5) !important;
+}
+
+.facebook-card .card-header:after {
+    background: transparent !important;
 }
 
 .facebook-card .facebook-avatar {
@@ -1021,8 +1024,12 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
 }
 
 #feed-container .card-footer {
-    background: #ffffff !important;
-    padding: 5% 5% 0;
+    padding: 5% !important;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -40px;
+    background: #ffffff;
+    color: #333333;
 }
 
 #feed-container .card-footer:before {
@@ -1052,4 +1059,52 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
     background: #8ac640;
     font-size: 49px !important;
     box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.7);
+}
+
+#become_parent_disp_card .card-header {
+    padding: 5% !important;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -40px;
+    background: #ffffff;
+    color: #333333;
+}
+
+#become_parent_disp_card .desc {
+    padding: 2% 5%;
+}
+
+#become_parent_disp_card .form_button {
+    position: fixed;
+    z-index: 999;
+    bottom: 45%;
+    right: 15%;
+}
+
+#become_parent_disp_card .form_button i {
+    width: auto;
+    height: auto;
+    color: #fafafa;
+    border-radius: 90%;
+    background: #8ac640;
+    font-size: 35px !important;
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.7);
+    text-align: center;
+    padding: 25%;
+}
+
+#become_parent_disp_card .card {
+    box-shadow: initial !important;
+}
+
+#become_parent_disp_card .button {
+    width: 80%;
+    margin: 0 auto;
+    color: #8ac640;
+    border: #8ac640 1px solid;
+    font-size: 17px;
+}
+
+#become_parent_disp_card .button i {
+    vertical-align: middle;
 }
