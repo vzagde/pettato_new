@@ -633,11 +633,11 @@
 }
 
 .user_blk{
-    width: 95% !important;
+    width: 100% !important;
     margin: 7% auto !important;
-    margin: 0 auto;
     color: rgba(0,0,0,0.51) !important;
     top:0 !important;
+    text-align: center;
 }
 
 .pro_file_icons{
@@ -1108,3 +1108,97 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
 #become_parent_disp_card .button i {
     vertical-align: middle;
 }
+
+#pet_dating .card-header {
+    padding: 5% !important;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: #ffffff;
+    color: #333333;
+    margin-top: -40px;
+}
+
+#pet_dating .content_contain {
+    padding: 5% !important;
+    border-radius: 15px;
+    background: #ffffff;
+    color: #333333;
+    width: 75%;
+    margin: -40px auto 15px;
+    text-align: center;
+    box-shadow: 1px 1px 10px 5px rgba(230, 230, 230, 0.5);
+}
+
+
+#pet_dating .card {
+    box-shadow: none;
+}
+
+#pet_dating .pro_file_icons_like i {
+    background: #8ac640;
+    color: #ffffff;
+    padding: 10%;
+    border-radius: 10px;
+    font-size: xx-large !important;
+}
+
+#pet_dating .pro_file_icons_np i {
+    background: #8ac640;
+    color: #ffffff;
+    padding: 10%;
+    border-radius: 10px;
+}
+
+#pet_dating .content_contain p {
+    color: #c1c1c1;
+}
+
+#pet_dating .slick-dots {
+    bottom: -15px;
+}
+
+#pet_dating .slick-dots li button:before {
+    font-size: 40px;
+    content: "\2014";
+}
+
+#pet_dating .slick-dots li.slick-active button:before {
+    color: #8ac640;
+}
+
+#pet_dating .slick-dots li {
+    width: 40px;
+}
+
+#lost_and_found_container .facebook-name, #lost_and_found_container .facebook-date {
+    margin-left: 50%;
+}
+
+.demo-card-header-pic .card-header {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.demo-card-header-pic {
+    margin: 0 auto 20px;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.6) !important;
+}
+
+#lost_and_found_container .card-footer {
+    background: #8ac640;
+}
+
+.color-white {
+    color: #ffffff !important;
+}
+
+#lost_and_found_container .card-content-inner .text_expand {
+    height: 20px;
+    overflow: hidden;
+}
+
+
+
+
+

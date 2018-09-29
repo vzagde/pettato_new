@@ -194,14 +194,6 @@ myApp.onPageInit('create_feed', function(page) {
     load_location_all('#create_feed-location');
 });
 
-myApp.onPageInit('create_lost_and_found', function(page) {
-    myApp.allowPanelOpen = true;
-    image_from_device = '';
-    bottom_tabs();
-    $('#create_feed-tags').materialtags('refresh');
-    load_location_all('#create_feed-location');
-});
-
 myApp.onPageInit('create_buzz', function(page) {
     myApp.allowPanelOpen = true;
     image_from_device = '';
@@ -381,6 +373,40 @@ myApp.onPageInit('profile_pet', function(page) {
     bottom_tabs();
     $('.unfollow').hide();
     load_profile_content();
+});
+
+myApp.onPageInit('lost_and_found', function(page) {
+    myApp.allowPanelOpen = true;
+    bottom_tabs();
+    $(".click_to_expand").click(function(e){
+        $(".text_expand").css('height', '20px');
+        var trigger_id = $(this).data('trigger');
+        console.log(trigger_id);
+        $(trigger_id).css('height', 'auto');
+    })
+});
+
+myApp.onPageInit('create_lost_and_found', function(page) {
+    myApp.allowPanelOpen = true;
+    image_from_device = '';
+    bottom_tabs();
+    $('#create_feed-tags').materialtags('refresh');
+    load_location_all('#create_feed-location');
+});
+
+
+myApp.onPageInit('pet_dating', function(page) {
+    myApp.allowPanelOpen = true;
+    bottom_tabs();
+    $('.unfollow').hide();
+    load_profile_content();
+    $(".dating-slider").slick({
+        autoplay: false,
+        verticalSwiping: false,
+        dots: true,
+        nextArrow: $("#pet_dating_next"),
+        prevArrow: $("#pet_dating_prev"),
+    });
 });
 
 myApp.onPageInit('profile_business_sub', function(page) {
