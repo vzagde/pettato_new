@@ -1050,10 +1050,10 @@ function load_notification_count() {
 }
 
 function load_feeds() {
-    load_notification_count();
-    setInterval(function() {
-        load_notification_count();
-    }, 5000);
+    // load_notification_count();
+    // setInterval(function() {
+    //     load_notification_count();
+    // }, 5000);
     if (user_data.user_type=='User') {
         $('#buzzCreate').show();
         $('#offerCreate').hide();

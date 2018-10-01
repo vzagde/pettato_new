@@ -763,6 +763,36 @@
     padding: 0;
 }
 
+#shopper_chat .list-block .item-content {
+    padding-left: 0px;
+    max-height: 75px;
+    width: 100%;
+}
+
+#shopper_chat .list-block .read_active {
+    background: #f3f3f3;
+}
+
+#shopper_chat .item-media img {
+    max-width: 75px;
+    max-height: 75px;
+    border-radius: 0;
+}
+
+#shopper_chat .item-subtitle {
+    font-family: 'CooperHewitt-Light' !important;
+}
+
+#shopper_chat .item-title {
+    width: 100%;
+}
+
+#shopper_chat .item-title .time-text {
+    float: right;
+    font-family: 'CooperHewitt-Light' !important;
+    font-size: 12px;
+}
+
 .picker-calendar>.toolbar>.toolbar-inner{
     background-color: #2196f3 !important;
 }
@@ -1075,9 +1105,9 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
 }
 
 #become_parent_disp_card .form_button {
-    position: fixed;
+    position: absolute;
     z-index: 999;
-    bottom: 45%;
+    bottom: 4%;
     right: 15%;
 }
 
