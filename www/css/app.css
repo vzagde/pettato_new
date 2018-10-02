@@ -1228,6 +1228,51 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
     overflow: hidden;
 }
 
+/*#become_parent_list1_block .card {
+    width: 46%;
+    display: inline-block;
+}*/
+
+#become_parent_list1_block .masonry {
+    column-count: 2;
+    margin: 2em auto;
+    max-width: 100%;
+    column-gap: 0.7em;
+    padding: 2%;
+}
+
+#become_parent_list1_block .item {
+    background-color: #ffffff;
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0;
+    box-shadow: 1px 1px 0px 0px rgba(177, 177, 177, 0.8);
+    border-radius: 5px;
+}
+
+#become_parent_list1_block .item .profile_photo img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#become_parent_list1_block .item .content_blocker {
+    padding: 5%;
+}
+
+#become_parent_list1_block .item .content_blocker p {
+    color: #8a8a8a;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

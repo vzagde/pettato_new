@@ -97,6 +97,43 @@ myApp.onPageInit('become_parent_list', function(page) {
     load_feeds();
 });
 
+myApp.onPageInit('become_parent_list1', function(page) {
+    myApp.allowPanelOpen = true;
+    console.log('page.query.register:' + page.query.register);
+    if (page.query.register) {
+    }
+    bottom_tabs();
+    load_feeds();
+
+    function resizeGridItem(item) {
+        grid = document.getElementsByClassName("become_parent_list1_block_grid")[0];
+        rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+        rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+        rowSpan = Math.ceil((item.querySelector('.card-content-inner').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+        item.style.gridRowEnd = "span " + rowSpan;
+    }
+
+    function resizeAllGridItems() {
+        allItems = document.getElementsByClassName("become_parent_list1_block_card");
+        for (x = 0; x < allItems.length; x++) {
+            resizeGridItem(allItems[x]);
+        }
+    }
+
+    resizeAllGridItems();
+
+    allItems = document.getElementsByClassName("become_parent_list1_block_card");
+    for (x = 0; x < allItems.length; x++) {
+        imagesLoaded(allItems[x], resizeInstance);
+    }
+
+    function resizeInstance(instance) {
+        item = instance.elements[0];
+        resizeGridItem(item);
+    }
+
+});
+
 myApp.onPageInit('become_parent_disp', function(page) {
     myApp.allowPanelOpen = true;
     bottom_tabs();
