@@ -325,7 +325,7 @@
     border-radius: 30px;
     overflow: hidden;
     margin-top: -38px;
-    margin-left: 10%;
+    margin-left: 8%;
     z-index: 99999;
     border: 3px solid #fff;
 }
@@ -536,26 +536,26 @@
     max-width: 100%;
 }
 
-.message-name{
+.message-name {
     margin-bottom:5% !important; 
 }
 
-.messages-date{
+.messages-date {
     margin-bottom: 0 !important;
     font-size: 10px !important;
     padding-top: 4% !important;
     border-top: 1px solid rgba(0,0,0,0.1) !important;
 }
 
-.pad_5{
+.pad_5 {
     padding-top:5% !important;
 }
 
-.men_u{
+.men_u {
     background:rgba(0,0,0,0.73);
 }
 
-.comment{
+.comment {
     font-size: 1.5em;
     font-family: 'CooperHewitt-Light' !important;
     color: #fff;
@@ -568,7 +568,7 @@
     margin: 0 !important;
 }
 
-.menu_a{
+.menu_a {
     color:#fff !important;
     margin: 7% !important;
     display: block;
@@ -584,45 +584,46 @@
     margin-top: 12% !important;
 }
 
-.menu_logo{
+.menu_logo {
     width:25%;
     margin-top:10%;
 }
 
-.cover_box{
+.cover_box {
     width:100%;
     position:relative;
     z-index:-1;
 }
 
-.insert_cover{
+.insert_cover {
     position:absolute;
     top:4%;
     right:0;
 }
 
-.cvr{
+.cvr {
     color: rgba(0,0,0,0.73);
     background: #fff;
     border-radius: 7px;
     font-size: 2.5em !important;
 }
 
-.c_b{
+.c_b {
     width: 100%;
     position: relative;
 }
 
-.p_name{
+.p_name {
     font-size: 1.4em;
     text-align: left;
     padding: 0 10%;
     color: rgba(0,0,0,0.51);
     font-weight: bold;
     font-family: 'CooperHewitt-Bold';
+    margin: 4% 0;
 }
 
-.p_name1{
+.p_name1 {
     position: relative;
     left: 0;
     right: 0;
@@ -632,7 +633,7 @@
     margin:0;
 }
 
-.user_blk{
+.user_blk {
     width: 100% !important;
     margin: 7% auto !important;
     color: rgba(0,0,0,0.51) !important;
@@ -640,45 +641,45 @@
     text-align: center;
 }
 
-.pro_file_icons{
+.pro_file_icons {
     display: inline-block;
     margin: 0 auto;
     width: 32%;
     text-align: center;
 }
 
-.pro_file_icons p{
+.pro_file_icons p {
     margin: 1% 0 !important;
 }
 
-.chart_box{
+.chart_box {
     width:100%;
     margin-bottom:8%;
     height:0;
     overflow:hidden;
 }
 
-.follow_col{
+.follow_col {
     background:rgba(0,0,0,0.71);
     text-align:center !important;
     width:50% !important;
 }
 
-.follow_col p{
+.follow_col p {
     color:#fff !important;
 }
 
-.follow_col1{
+.follow_col1 {
     background:#fff;
     text-align:center !important;
     width:50% !important;
 }
 
-.follow_col1 p{
+.follow_col1 p {
     color:#212121 !important;
 }
 
-.user_own_feed{
+.user_own_feed {
     width: 100%;
     font-size: 1.2em;
     text-align: center;
@@ -701,7 +702,7 @@
     line-height: 15px;
 }
 
-.bee{
+.bee {
     width:35%;
 }
 
@@ -713,12 +714,12 @@
     float: left;
 }
 
-.user_status,.user_status1{
+.user_status,.user_status1 {
     margin-bottom:8%;
     padding-left:3%;
 }
 
-.status_box{
+.status_box {
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.71);
     margin-left: 1%;
@@ -726,14 +727,14 @@
     outline: none;
 }
 
-.notify{
+.notify {
     background: rgba(0,0,0,0.71);
     color: #fff;
     border-bottom:1px solid rgba(255,255,255,0.71);
 }
 
 
-.notify_box{
+.notify_box {
     width: 50px;
     height: 50px;
     border-radius: 25px;
@@ -743,22 +744,22 @@
     /* border:1px solid #fff; */
 }
 
-.notify_box img{
+.notify_box img {
     width:100% !important;
     height:auto !important;
     max-width:100% !important;
     border-radius:0 !important;
 }
 
-.notify_sub{
+.notify_sub {
     font-size:0.8em !important;
 }
 
-.black_light{
+.black_light {
     background:#000 !important; 
 }
 
-#shopper_chat, #business_chat{
+#shopper_chat, #business_chat {
     margin: 0;
     padding: 0;
 }
@@ -1054,7 +1055,7 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
 }
 
 #feed-container .card-footer {
-    padding: 5% !important;
+    padding: 5% 15% 0 !important;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     margin-top: -40px;
