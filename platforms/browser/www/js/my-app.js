@@ -316,6 +316,17 @@ myApp.onPageInit('profile_shopper', function(page) {
     load_shopper_profile(user_id);
 });
 
+myApp.onPageInit('profile_shopper_pet', function(page) {
+    myApp.allowPanelOpen = true;
+    bottom_tabs();
+    clearInterval(new_comment_interval);
+    clearInterval(new_chat_interval);
+    image_from_device = '';
+    var user_id = token.id;
+    $('.unfollow').hide();
+    // load_shopper_profile(user_id);
+});
+
 myApp.onPageInit('profile_business', function(page) {
     myApp.allowPanelOpen = true;
     bottom_tabs();
@@ -440,9 +451,13 @@ myApp.onPageInit('pet_dating', function(page) {
     $(".dating-slider").slick({
         autoplay: false,
         verticalSwiping: false,
-        dots: true,
+        dots: false,
         nextArrow: $("#pet_dating_next"),
         prevArrow: $("#pet_dating_prev"),
+    });
+
+    $(".pro_file_icons_like").click(function() {
+        $(this).addClass("pro_file_icons_like_active");
     });
 });
 

@@ -34,6 +34,10 @@
     margin:0 !important;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .tabbar {
     position: fixed !important;
     bottom: 0 !important;
@@ -46,6 +50,10 @@
 
 .color_8ac640 {
     color: #8ac640 !important;
+}
+
+.color_757575 {
+    color: #757575 !important;
 }
 
 .textupper {
@@ -328,6 +336,16 @@
     margin-left: 8%;
     z-index: 99999;
     border: 3px solid #fff;
+}
+
+.pro_pic1_pet {
+    margin: -15% auto;
+    border: none !important;
+}
+
+.pro_pic1_pet_name {
+    margin-top: 60px;
+    text-align: center;
 }
 
 .pro_pic1 img{
@@ -958,6 +976,11 @@
 .chat_box_design .message-sent .message-text {
     margin-right: 60px;
     padding: 3% !important;
+    background: #e8e7e7 !important;
+}
+
+.chat_box_design .message-sent .message-text:before {
+    border-bottom: 8px solid #e8e7e7;
 }
 
 .chat_box_design .message-sent .message-name {
@@ -969,11 +992,11 @@
 }
 
 .chat_box_design .message-received .message-text:before {
-    border-bottom: 8px solid #d1ead3 !important;
+    border-bottom: 8px solid #d8e699 !important;
 }
 
 .chat_box_design .message-received .message-text {
-    background: #d1ead3 !important;
+    background: #d8e699 !important;
     padding: 2% 5% !important;
 }
 
@@ -996,7 +1019,7 @@
 }
 
 .searchbar {
-    background: #539642;
+    background: #8ac640 !important;
 }
 
 label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio, label.label-radio input[type=checkbox]:checked~.item-after i.icon-form-radio, label.label-radio input[type=checkbox]:checked~.item-inner i.icon-form-radio, label.label-radio input[type=radio]:checked+.item-media i.icon-form-radio, label.label-radio input[type=radio]:checked~.item-after i.icon-form-radio, label.label-radio input[type=radio]:checked~.item-inner i.icon-form-radio {
@@ -1173,6 +1196,10 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
     font-size: xx-large !important;
 }
 
+#pet_dating .pro_file_icons_like_active i {
+    background: #ff5757 !important;
+}
+
 #pet_dating .pro_file_icons_np i {
     background: #8ac640;
     color: #ffffff;
@@ -1185,7 +1212,7 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
 }
 
 #pet_dating .slick-dots {
-    bottom: -15px;
+    display: none;
 }
 
 #pet_dating .slick-dots li button:before {
@@ -1265,10 +1292,45 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
     color: #8a8a8a;
 }
 
+.smart-select-page .navbar  {
+    background: #8ac640 !important;
+}
 
+.bg_grren1 {
+    background: #68bd45;
+}
 
+.bg_grren2 {
+    background: #8ac640;
+}
 
+.bg_grren3 {
+    background: #b6d663;
+}
 
+.white_heart_active {
+    color: #ff5757 !important;
+}
+
+.pet_details_profile_tb .pet_details_profile_tb_row {
+    margin: 10px;
+}
+
+.pet_details_profile_tb_row .row {
+    border-bottom: 1px solid #c2c2c2;
+    padding: 4%;
+}
+
+.pet_details_profile_tb .col-33, .pet_details_profile_tb .col-66 {
+    text-transform: uppercase;
+    font-family: 'CooperHewitt-Medium' !important;
+    color: #68bd45;
+}
+
+.pet_details_profile_tb .col-33 {
+    font-family: 'CooperHewitt-Light' !important;
+    color: #757575;
+}
 
 
 
