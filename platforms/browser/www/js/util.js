@@ -10,6 +10,10 @@ function goto_page(page) {
     });
 }
 
+function make_call(para1) {
+    window.open('tel:' + para1);
+}
+
 function goto_profile_shopper_pet() {
     mainView.router.load({
         url: 'profile_shopper_pet.html',
@@ -726,8 +730,8 @@ function load_edit_profile_shopper() {
         },
     })
     .done(function(res) {
-        console.log('res: ' + j2s(res));
         myApp.hideIndicator();
+        console.log('res: ' + j2s(res));
         if (res.status = 'success') {
             user_data = res.data;
 
@@ -754,7 +758,7 @@ function load_edit_profile_shopper() {
             image_from_device = user_data.image;
         } else {
             myApp.alert('Some error occurred');
-        }
+        }        
     }).fail(function(err) {
         myApp.hideIndicator();
         myApp.alert('Some error occurred');
@@ -1930,6 +1934,8 @@ function load_shopper_profile(user_id) {
             } else {
                 console.log("Failed");
             }
+
+            myApp.hideIndicator();
         }
     })
     .fail(function(err) {
@@ -2649,12 +2655,29 @@ function login_via_fb(data) {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
+    myApp.showIndicator();
     console.log("Token: "+token);
     user_data = token;
     if (token === undefined) {
         goto_page('index.html');
     } else {
-        goto_page('feeds.html');
+        if (user_data.user_type == 'User') {
+            mainView.router.load({
+                url: 'profile_shopper.html',
+                query: {
+                    id: token
+                },
+                ignoreCache: true,
+            });
+        } else {
+            mainView.router.load({
+                url: 'profile_business.html',
+                query: {
+                    id: token
+                },
+                ignoreCache: true,
+            });
+        }
     }
     document.addEventListener("backbutton", function(e) {
         e.preventDefault();
@@ -3218,4 +3241,5 @@ function shopper_register_onError_file(error) {
 /*
     Camera Operations Functionality Ends
 */
+
 
