@@ -10,6 +10,10 @@ function goto_page(page) {
     });
 }
 
+function make_call(para1) {
+    window.open('tel:' + para1);
+}
+
 function goto_profile_shopper_pet() {
     mainView.router.load({
         url: 'profile_shopper_pet.html',
@@ -3218,4 +3222,5 @@ function shopper_register_onError_file(error) {
 /*
     Camera Operations Functionality Ends
 */
+
 
