@@ -442,6 +442,12 @@ myApp.onPageInit('create_lost_and_found', function(page) {
     load_location_all('#create_feed-location');
 });
 
+myApp.onPageInit('ambulance', function(page) {
+    myApp.allowPanelOpen = true;
+    image_from_device = '';
+    bottom_tabs();
+});
+
 
 myApp.onPageInit('pet_dating', function(page) {
     myApp.allowPanelOpen = true;

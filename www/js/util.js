@@ -10,6 +10,13 @@ function goto_page(page) {
     });
 }
 
+function goto_profile_shopper_pet() {
+    mainView.router.load({
+        url: 'profile_shopper_pet.html',
+        ignoreCache: false,
+    });
+}
+
 function continue_btn_signup() {
     if (!token == false) {
         myApp.showIndicator();
@@ -1896,6 +1903,33 @@ function load_shopper_profile(user_id) {
             //     '</div>';
             // });
             // $('.profile-feed-container').html(feeds);
+
+            $("#pets_and_business_profiles_list").empty();
+
+            if (res.response.pet_list) {
+                var html = '';
+                $.each(res.response.pet_list, function(index, value) {
+                    if (value.user_type == 'Pet') {
+                        html += '<div class="change_width-20 text-center" onclick="goto_profile_shopper_pet()">'+
+                                    '<img src="'+image_url+value.profile_image+'" width="70%" style="border-radius: 5px">'+
+                                    '<p class="mrg0 color_757575">'+value.first_name+'</p>'+
+                                '</div>';
+                    } else {
+                        html += '<div class="change_width-20 text-center" onclick="got_business_page('+value.id+')">'+
+                                    '<img src="'+image_url+value.profile_image+'" width="70%" style="border-radius: 5px">'+
+                                    '<p class="mrg0 color_757575">'+value.first_name+'</p>'+
+                                '</div>';
+                    }
+
+                })
+
+                html += "<div style='clear: both'></div>";
+
+                $("#pets_and_business_profiles_list").html(html);
+                console.log("Success");
+            } else {
+                console.log("Failed");
+            }
         }
     })
     .fail(function(err) {
@@ -1949,14 +1983,12 @@ function load_business_profile(user_id) {
     })
     .done(function(res) {
         if (res.status == 'Success') {
-            console.log(res.status);
-            console.log(res.response.user_details);
             var cover_image = image_url+res.response.user_details.cover_pic;
             var profile_image = image_url+res.response.user_details.profile_image;
             var image = '';
 
-            $('.cover_image').attr('src', cover_image);
-            $('.profie_image').attr('src', profile_image);
+            $('.cover_image_business_sub').attr('src', cover_image);
+            $('.profie_image_business_sub').attr('src', profile_image);
 
             $('.cover_image_btn').show();
 
@@ -1980,8 +2012,10 @@ function load_business_profile(user_id) {
                 dial_number(res.data.phone);
             });
 
-            $('.p_name').text(res.response.user_details.first_name);
-            $('.p_name1').text(res.response.user_details.business_name);
+            var append_p_name = res.response.user_details.first_name+'<br><i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<br><p class="color_757575 mrg0" style="font-size: 13px">29 Reviews<p>';
+
+            $('.p_name_business_sub').html(append_p_name);
+            // $('.p_name1_business_sub').text(res.response.user_details.business_name);
         }
     })
     .fail(function(err) {
@@ -1997,7 +2031,6 @@ function dial_number(phone) {
 }
 
 function follow(id_to_follow) {
-    console.log('id: ' + id_to_follow);
     $.ajax({
             url: base_url + 'follow',
             type: 'POST',
@@ -2009,7 +2042,6 @@ function follow(id_to_follow) {
             },
         })
         .done(function(response) {
-            console.log("success: " + j2s(response));
             $('.follow').hide();
             $('.unfollow').show();
             // mainView.router.refreshPage();
@@ -2024,7 +2056,6 @@ function follow(id_to_follow) {
 }
 
 function unfollow(id_to_unfollow) {
-    console.log('id: ' + id_to_unfollow);
     $.ajax({
         url: base_url + 'unfollow',
         type: 'POST',
@@ -2035,7 +2066,6 @@ function unfollow(id_to_unfollow) {
         },
     })
     .done(function(response) {
-        console.log("success: " + j2s(response));
         $('.follow').show();
         $('.unfollow').hide();
         // mainView.router.refreshPage();
@@ -2752,7 +2782,7 @@ function load_pets_profiles() {
         var html = '';
         if (res.status == 'Success') {
             $.each(res.response, function(index, value){
-                html += '<div class="card facebook-card" onclick="got_pets_page('+value.id+')">'+
+                html += '<div class="card facebook-card" onclick="goto_profile_shopper_pet()">'+
                         '<div class="card-header no-border">'+
                         '<div class="facebook-avatar">'+
                         '<img src="'+image_url+value.profile_image+'" width="50" height="50">'+
