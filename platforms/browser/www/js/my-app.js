@@ -230,7 +230,7 @@ myApp.onPageInit('create_feed', function(page) {
     image_from_device = '';
     bottom_tabs();
     $('#create_feed-tags').materialtags('refresh');
-    load_location_all('#create_feed-location');
+    load_city('#create_feed-location');
 });
 
 myApp.onPageInit('create_buzz', function(page) {
@@ -441,7 +441,7 @@ myApp.onPageInit('create_lost_and_found', function(page) {
     image_from_device = '';
     bottom_tabs();
     $('#create_feed-tags').materialtags('refresh');
-    load_location_all('#create_feed-location');
+    load_city('#create_feed-location');
 });
 
 myApp.onPageInit('ambulance', function(page) {

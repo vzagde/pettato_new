@@ -8,46 +8,44 @@
         </div>
     </div>
     <div class="page-content padt0 feeds_form_box">
-        <form>
-            <div class="list-block f_box inputs-list">
-                <ul>
-                    <li class="item-content create_feed_pic">
-                        <div class="item-inner pad0">
-                            <div class="item-input">
-                                <a href="#" id="create_feed-image_btn" onclick="open_dialog_for_image()" class="floating-button black_clr">
-                                    <img src="img/photo-camera.png" style="width: 40px;">
-                                </a>
+        <div class="list-block f_box inputs-list">
+            <ul>
+                <li class="item-content create_feed_pic">
+                    <div class="item-inner pad0">
+                        <div class="item-input">
+                            <a href="#" id="create_feed-image_btn" onclick="open_dialog_for_image('feed_image')" class="floating-button black_clr">
+                                <img src="img/photo-camera.png" style="width: 40px;">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li style="margin-top:2%;" class="align-top">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input1">
+                                <textarea class="white_border first_t" placeholder="Description" style="color: #333333 !important" id="create_feed-description"></textarea>
                             </div>
                         </div>
-                    </li>
-                    <li style="margin-top:2%;" class="align-top">
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search locations" data-back-on-select="true">
+                        <select name="car" id="create_feed-location">
+                        </select>
                         <div class="item-content">
                             <div class="item-inner">
-                                <div class="item-input1">
-                                    <textarea class="white_border first_t" placeholder="Description" style="color: #333333 !important" id="create_feed-description"></textarea>
-                                </div>
+                                <div class="item-title loc">Location</div>
+                                <div class="item-after"></div>
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search locations" data-back-on-select="true">
-                            <select name="car" id="create_feed-location">
-                            </select>
-                            <div class="item-content">
-                                <div class="item-inner">
-                                    <div class="item-title loc">Location</div>
-                                    <div class="item-after"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="content-block submit-btn">
-                <a href="#" class="button button-big" onclick="add_feed()">Create Feed</a>
-            </div>
-            <br><br>
-        </form>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="content-block submit-btn">
+            <a href="#" class="button button-big" onclick="add_feed()">Create Feed</a>
+        </div>
+        <br><br>
         <div class="toolbar tabbar">
             <div class="toolbar-inner">
                 <a href="#" class="tab-link buzzs" onclick="goto_page('feeds.html')">
