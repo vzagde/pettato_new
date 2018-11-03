@@ -19,6 +19,7 @@ var time = '';
 var profile_image_link = '';
 var profile_cover_image_link = '';
 var image_upload_type = '';
+var feed_image_upload = '';
 
 var new_comment_interval = null;
 var comment_time = '';
@@ -68,6 +69,7 @@ myApp.onPageInit('login', function(page) {
     myApp.allowPanelOpen = false;
     clearInterval(new_comment_interval);
     clearInterval(new_chat_interval);
+    myApp.hideIndicator();
 });
 
 myApp.onPageInit('before_register', function(page) {

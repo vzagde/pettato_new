@@ -92,6 +92,7 @@ function continue_btn_signin() {
             myApp.alert('Some error occurred');
         }).always();
     } else {
+        myApp.hideIndicator();
         mainView.router.load({
             url: 'login.html',
             ignoreCache: false,
@@ -1505,14 +1506,14 @@ function add_comment(type, type_id, comment) {
 
 function add_feed() {
     console.log('add_feed');
-    var feed_image = image_from_device.trim();
+    var feed_image = feed_image_upload.trim();
     var description = $('#create_feed-description').val().trim();
     var tags = $('#create_feed-tags').val().trim();
     var location_id = $('#create_feed-location').val();
 
     if (feed_image == '') {
-        // myApp.alert('Please upload image.');
-        // return false;
+        myApp.alert('Please upload image.');
+        return false;
         feed_image = 'neon_buzz.jpg';
     }
     if (description == '') {
@@ -2659,9 +2660,11 @@ function onDeviceReady() {
     console.log("Token: "+token);
     user_data = token;
     if (token === undefined) {
+        myApp.hideIndicator();
         goto_page('index.html');
     } else {
         if (user_data.user_type == 'User') {
+            myApp.hideIndicator();
             mainView.router.load({
                 url: 'profile_shopper.html',
                 query: {
@@ -2670,6 +2673,7 @@ function onDeviceReady() {
                 ignoreCache: true,
             });
         } else {
+            myApp.hideIndicator();
             mainView.router.load({
                 url: 'profile_business.html',
                 query: {
@@ -3220,6 +3224,8 @@ function shopper_register_onSuccess_file(res) {
             profile_image_link = uploaded_image;
         } else if (image_upload_type == 'business_cover') {
             profile_cover_image_link = uploaded_image;
+        } else {
+            feed_image_upload = uploaded_image;
         }
         console.log('uploaded_image: ' + uploaded_image);
         myApp.alert("Image Uploaded Successfully");
