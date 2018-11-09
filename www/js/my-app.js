@@ -96,7 +96,30 @@ myApp.onPageInit('become_parent_list', function(page) {
     if (page.query.register) {
     }
     bottom_tabs();
-    load_feeds();
+    // load_feeds();
+
+    $(".add_clk").click(function(e) {
+        e.preventDefault();
+        if (tabs_active == 0) {
+            tabs_active = 1;
+            $(".shr_lnk").css('opacity', 0);
+            $(".shr_lnk").css('top', 0);
+
+            $(this).prev(".shr_lnk").animate({
+                top: '-=85%',
+                opacity: 1,
+            });
+
+            $(this).prev(".shr_lnk").prev(".shr_lnk").animate({
+                top: '-=175%',
+                opacity: 1,
+            });
+        } else {
+            tabs_active = 0;
+            $(".shr_lnk").animate({opacity: 0, top: '0px'});
+        }
+    });
+
 });
 
 myApp.onPageInit('become_parent_list1', function(page) {
@@ -104,8 +127,8 @@ myApp.onPageInit('become_parent_list1', function(page) {
     console.log('page.query.register:' + page.query.register);
     if (page.query.register) {
     }
+
     bottom_tabs();
-    load_feeds();
 
     function resizeGridItem(item) {
         grid = document.getElementsByClassName("become_parent_list1_block_grid")[0];
@@ -133,6 +156,38 @@ myApp.onPageInit('become_parent_list1', function(page) {
         item = instance.elements[0];
         resizeGridItem(item);
     }
+
+    if (user_data.user_type=='User') {
+        $('#buzzCreate').show();
+        $('#offerCreate').hide();
+    } else {
+        $('#buzzCreate').hide();
+        $('#offerCreate').show();
+    }
+
+    var tabs_active = 0;
+
+    $(".add_clk").click(function(e) {
+        e.preventDefault();
+        if (tabs_active == 0) {
+            tabs_active = 1;
+            $(".shr_lnk").css('opacity', 0);
+            $(".shr_lnk").css('top', 0);
+
+            $(this).prev(".shr_lnk").animate({
+                top: '-=85%',
+                opacity: 1,
+            });
+
+            $(this).prev(".shr_lnk").prev(".shr_lnk").animate({
+                top: '-=175%',
+                opacity: 1,
+            });
+        } else {
+            tabs_active = 0;
+            $(".shr_lnk").animate({opacity: 0, top: '0px'});
+        }
+    });
 
 });
 

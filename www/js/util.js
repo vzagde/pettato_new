@@ -1062,10 +1062,6 @@ function load_notification_count() {
 }
 
 function load_feeds() {
-    // load_notification_count();
-    // setInterval(function() {
-    //     load_notification_count();
-    // }, 5000);
     if (user_data.user_type=='User') {
         $('#buzzCreate').show();
         $('#offerCreate').hide();
@@ -1101,13 +1097,53 @@ function load_feeds() {
             tabs_active = 0;
             $(".shr_lnk").animate({opacity: 0, top: '0px'});
         }
-        // // $(".shr_lnk").hide();
-        // $(this).prev(".shr_lnk").slideToggle();
-        // $(this).prev(".shr_lnk").prev(".shr_lnk").slideToggle();
-        // $(this).prev(".shr_lnk").prev(".shr_lnk").prev(".shr_lnk").slideToggle();
-        // $(this).prev(".dlt_lnk").slideToggle();
     });
-    // myApp.showIndicator();
+
+    myApp.showIndicator();
+    $.ajax({
+        url: base_url + 'feeds',
+        type: 'POST',
+        data: {
+            user_id: token,
+        },
+    }).done(function(res){
+        var html = '';
+
+        if (res.status == 'Success') {
+            $.each(res.response, function(index, value){
+                html += '<div class="card c_ard ks-facebook-card">'+
+                        '<div class="black_overlay"></div>'+
+                        '<a href="#" class="card-header no-border pro_view">'+
+                        '<div class="ks-facebook-avatar pro_pic">'+
+                        '<img src="'+image_url+value.profile_image+'" width="34" height="34">'+
+                        '</div>'+
+                        '<div class="ks-facebook-name pro_name">'+value.first_name+' '+value.last_name+'</div>'+
+                        '<div class="ks-facebook-date pro_tag">'+value.feeds_content+'</div>'+
+                        '<div class="ks-facebook-date pro_tag">0 Comments 0 Likes</div>'+
+                        '</a>'+
+                        '<a class="card-content" href="feed.html">'+
+                        '<img data-src="'+image_url+value.image+'" width="100%" class="lazy lazy-fadein">'+
+                        '</a>'+
+                        '<div class="card-footer no-border like_share">'+
+                        '<a href="javascript:void(0);" style="opacity: 0;" class="shr_lnk"><i class="material-icons white_heart white_heart_bubble bg_grren1" style="font-size:20px !important;">share</i></a>'+
+                        '<a href="javascript:void(0);" style="opacity: 0;" class="shr_lnk"><i class="material-icons white_heart white_heart_bubble bg_grren2" style="font-size:20px !important;">comment</i></a>'+
+                        '<a href="javascript:void(0);" style="opacity: 0;" class="shr_lnk" style=""><i class="material-icons white_heart white_heart_bubble bg_grren3" style="font-size:20px !important;">save</i></a>'+
+                        '<a href="javascript:void(0);" class="add_clk" style="z-index: 999"><i class="material-icons white_heart">add_circle</i></a>'+
+                        '<a href="javascript:void(0);" data-liked="0" class=""><i class="material-icons white_heart white_heart_active">favorite</i></a>'+
+                        '</div>'+
+                        '</div>';
+            });
+
+            html += '<br><br>';
+
+            $("#feeds-container").append(html);
+            myApp.hideIndicator();
+        } else {
+            myApp.hideIndicator();
+        }
+    }).error(function(res){
+        myApp.hideIndicator();
+    })
    //  $.ajax({
    //      url: base_url + 'feeds',
    //      type: 'POST',
@@ -1928,7 +1964,11 @@ function load_shopper_profile(user_id) {
 
                 })
 
-                html += "<div style='clear: both'></div>";
+                html += '<div class="change_width-20 text-center">'+
+                            '<img src="img/create-group-button.png" width="70%" style="border-radius: 5px">'+
+                            '<p class="mrg0 color_757575">Add Acount</p>'+
+                        '</div>'+
+                        '<div style="clear: both"></div>';
 
                 $("#pets_and_business_profiles_list").html(html);
                 console.log("Success");

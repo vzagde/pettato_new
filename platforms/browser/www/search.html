@@ -1,4 +1,4 @@
-<div data-page="pets_list" class="page">
+<div data-page="pets_list" class="page" id="search_page_css">
     <div class="navbar header">
         <div class="navbar-inner">
             <div class="left">
@@ -16,14 +16,236 @@
         </div>
         <a href="#" class="searchbar-cancel">Cancel</a>
     </form>
+    <div class="subnavbar">
+        <div class="buttons-row">
+            <a href="#tab1" class="button tab-link active">Users</a>
+            <a href="#tab2" class="button tab-link">Feeds</a>
+            <a href="#tab3" class="button tab-link">Tags</a>
+        </div>
+    </div>
     <div class="searchbar-overlay"></div>
-    <div class="page-content pad_55">
+    <div class="page-content pad_55" style="top: 65px">
         <div class="content-block searchbar-not-found">
             Nothing found
         </div>
-        <div class="list-block list-block-search searchbar-found">
-            <ul id="search-list">
-            </ul>
+        <div class="tabs">
+            <div id="tab1" class="tab active">
+                <div class="content-block pad0">
+                    <div class="list-block list-block-search searchbar-found">
+                        <ul id="search-list">
+                            <li class="item-content pad0">
+                                <div class="item-inner">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media pad0">
+                                            <img src="img/sid_profile_pic.png" width="75" height="75">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    Siddharth Prasad <br>
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">User Profile</div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action1">Delete</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content pad0">
+                                <div class="item-inner">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media pad0">
+                                            <img src="img/huzaif_profile_pic.png" width="75" height="75">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    Huzaif <br>
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">User Profile</div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action1">Delete</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content pad0">
+                                <div class="item-inner">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media pad0">
+                                            <img src="img/priyanka_profile_pic.png" width="75" height="75">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    Priyanka Yadav <br>
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">User Profile</div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action1">Delete</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content pad0">
+                                <div class="item-inner">
+                                    <div class="item-content">
+                                        <div class="item-media pad0">
+                                            <img src="img/vishal_profile_pic.png" width="75" height="75">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    Vishal <br>
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">User Profile</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tab2" class="tab">
+                <div class="content-block pad0">
+                    <div class="list-block list-block-search searchbar-found">
+                        <ul id="search-list">
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="card c_ard ks-facebook-card">
+                                        <div class="black_overlay"></div>
+                                        <a href="#" class="card-header no-border pro_view">
+                                            <div class="ks-facebook-avatar pro_pic">
+                                                <img src="img/prithvi_profile_pic.png" width="34" height="34">
+                                            </div>
+                                            <div class="ks-facebook-name pro_name">Prithvi Shetty</div>
+                                            <div class="ks-facebook-date pro_tag">Lorem Epsum is simply...</div>
+                                            <div class="ks-facebook-date pro_tag">9 Comments 5 Likes</div>
+                                        </a>
+                                        <a class="card-content" href="feed.html">
+                                            <img data-src="img/feed_list14.png" width="100%" class="lazy lazy-fadein">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="card c_ard ks-facebook-card">
+                                        <div class="black_overlay"></div>
+                                        <a href="#" class="card-header no-border pro_view">
+                                            <div class="ks-facebook-avatar pro_pic">
+                                                <img src="img/vishal_profile_pic.png" width="34" height="34">
+                                            </div>
+                                            <div class="ks-facebook-name pro_name">Vishal Zagde</div>
+                                            <div class="ks-facebook-date pro_tag">Lorem Epsum is simply...</div>
+                                            <div class="ks-facebook-date pro_tag">9 Comments 5 Likes</div>
+                                        </a>
+                                        <a class="card-content" href="feed.html">
+                                            <img data-src="img/feed_list4.png" width="100%" class="lazy lazy-fadein">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="card c_ard ks-facebook-card">
+                                        <div class="black_overlay"></div>
+                                        <a href="#" class="card-header no-border pro_view">
+                                            <div class="ks-facebook-avatar pro_pic">
+                                                <img src="img/vishal_profile_pic.png" width="34" height="34">
+                                            </div>
+                                            <div class="ks-facebook-name pro_name item-title">Vishal Zagde</div>
+                                            <div class="ks-facebook-date pro_tag item-title">Lorem Epsum is simply...</div>
+                                            <div class="ks-facebook-date pro_tag">9 Comments 5 Likes</div>
+                                        </a>
+                                        <a class="card-content" href="feed.html">
+                                            <img data-src="img/feed_list1.png" width="100%" class="lazy lazy-fadein">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="card c_ard ks-facebook-card">
+                                        <div class="black_overlay"></div>
+                                        <a href="#" class="card-header no-border pro_view">
+                                            <div class="ks-facebook-avatar pro_pic">
+                                                <img src="img/huzaif_profile_pic.png" width="34" height="34">
+                                            </div>
+                                            <div class="ks-facebook-name pro_name item-title">Huzaif Rangila</div>
+                                            <div class="ks-facebook-date pro_tag item-title">Lorem Epsum is simply...</div>
+                                            <div class="ks-facebook-date pro_tag">9 Comments 5 Likes</div>
+                                        </a>
+                                        <a class="card-content" href="feed.html">
+                                            <img data-src="img/feed_list2.png" width="100%" class="lazy lazy-fadein">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="card c_ard ks-facebook-card">
+                                        <div class="black_overlay"></div>
+                                        <a href="#" class="card-header no-border pro_view">
+                                            <div class="ks-facebook-avatar pro_pic">
+                                                <img src="img/twinkle_profile_pic.png" width="34" height="34">
+                                            </div>
+                                            <div class="ks-facebook-name pro_name item-title">Twinkle Dhariya</div>
+                                            <div class="ks-facebook-date pro_tag item-title">Lorem Epsum is simply...</div>
+                                            <div class="ks-facebook-date pro_tag">9 Comments 5 Likes</div>
+                                        </a>
+                                        <a class="card-content" href="feed.html">
+                                            <img data-src="img/feed_list3.png" width="100%" class="lazy lazy-fadein">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tab3" class="tab">
+                <div class="content-block pad0">
+                    <div class="list-block list-block-search searchbar-found">
+                        <ul id="search-list">
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Acura </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Acura 21</div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Acura 22</div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Acura 23</div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Acura 24</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+        <br><br><br>
     </div>
 </div>

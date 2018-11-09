@@ -1107,12 +1107,17 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
 }
 
 .form_button i {
-    width: 50px;
-    height: 50px;
+    width: auto;
+    height: auto;
     border-radius: 50px;
     background: #8ac640;
-    font-size: 49px !important;
+    font-size: 35px !important;
     box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.7);
+    padding: 5px;
+}
+
+.form_button .shr_lnk {
+    left: auto !important;
 }
 
 #become_parent_disp_card .card-header {
@@ -1334,6 +1339,7 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
 
 #pets_and_business_profiles_list p {
     height: 55px;
+    font-size: 0.9em;
 }
 
 #pets_and_business_profiles_list {
@@ -1352,11 +1358,25 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
     color: #e4e445;
 }
 
+.navbar-fixed .page .subnavbar, .navbar-fixed.page .subnavbar {
+    top: 103px !important;
+}
 
+.subnavbar .active {
+    background: rgba(0,0,0,0.1);
+}
 
+#search_page_css .item-inner:after {
+    background: transparent !important;
+}
 
+#search_page_css .pro_view {
+    width: 90% !important;
+}
 
-
+#search_page_css .pro_pic {
+    margin-top: 5% !important;
+}
 
 
 
