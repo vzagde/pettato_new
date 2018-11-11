@@ -1061,6 +1061,29 @@ function load_notification_count() {
     
 }
 
+function load_feed_page(id) {
+    feed_details_fetch_id = id;
+    mainView.router.load({
+        url: 'feed.html',
+        ignoreCache: false,
+    });
+}
+
+function load_feed_detailsById() {
+    myApp.showIndicator();
+    $.ajax({
+        url: base_url + 'get_feed_data',
+        type: 'POST',
+        data: {
+            user_id: token,
+            feed_id: feed_details_fetch_id,
+        },
+    }).done(function(res){
+        console.log(res);
+    }).error(function(res){
+    })
+}
+
 function load_feeds() {
     if (user_data.user_type=='User') {
         $('#buzzCreate').show();
@@ -1111,7 +1134,7 @@ function load_feeds() {
 
         if (res.status == 'Success') {
             $.each(res.response, function(index, value){
-                html += '<div class="card c_ard ks-facebook-card">'+
+                html += '<div class="card c_ard ks-facebook-card" onclick="load_feed_page('+value.feed_id+');">'+
                         '<div class="black_overlay"></div>'+
                         '<a href="#" class="card-header no-border pro_view">'+
                         '<div class="ks-facebook-avatar pro_pic">'+
@@ -2059,7 +2082,7 @@ function load_business_profile(user_id) {
                 dial_number(res.data.phone);
             });
 
-            var append_p_name = res.response.user_details.first_name+'<br><i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<br><p class="color_757575 mrg0" style="font-size: 13px">29 Reviews<p>';
+            var append_p_name = res.response.user_details.first_name+'<br><i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<i class="material-icons">star_rate</i>'+'<br><p class="color_757575 mrg0" style="font-size: 13px">29 Reviews &nbsp;&nbsp;&nbsp;<a href="#" data-popup=".popup-review" class="open-popup color_757575 mrg0" style="font-size: 13px">Add Review</a></p>';
 
             $('.p_name_business_sub').html(append_p_name);
             // $('.p_name1_business_sub').text(res.response.user_details.business_name);

@@ -38,6 +38,10 @@
     text-align: center;
 }
 
+.text-left {
+    text-align: left !important;
+}
+
 .tabbar {
     position: fixed !important;
     bottom: 0 !important;
@@ -1358,6 +1362,12 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
     color: #e4e445;
 }
 
+.reviews_star i {
+    width: 20px;
+    font-size: 20px !important;
+    color: #e4e445;
+}
+
 .navbar-fixed .page .subnavbar, .navbar-fixed.page .subnavbar {
     top: 103px !important;
 }
@@ -1377,6 +1387,32 @@ label.label-radio input[type=checkbox]:checked+.item-media i.icon-form-radio:aft
 #search_page_css .pro_pic {
     margin-top: 5% !important;
 }
+
+.buttons-row {
+    background: #539642;
+}
+
+.buttons-row .button {
+    color: #ffffff;
+}
+
+.buttons-row .button.active {
+    color: #ffffff;
+    background: rgba(0,0,0,0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

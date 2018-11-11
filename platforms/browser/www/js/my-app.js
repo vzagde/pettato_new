@@ -35,6 +35,7 @@ var chat_post_id = '';
 var myChat = null;
 var myChatMessagebar = null;
 var new_chat_time = null;
+var feed_details_fetch_id = 0;
 
 openFB.init('2106128496268926', '', window.localStorage);
 
@@ -237,6 +238,8 @@ myApp.onPageInit('feed', function(page) {
     myApp.allowPanelOpen = true;
     bottom_tabs();
     var feed_id = page.query.id;
+    load_feed_detailsById(feed_details_fetch_id);
+    myApp.hideIndicator();
     // load_feed(feed_id);
     // load_comments('feed', feed_id);
 });
